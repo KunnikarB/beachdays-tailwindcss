@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+figure {
+  margin: 0;
+
+  font-family: var(--font-sans);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --font-sans: "Roboto Flex", sans-serif;
+  --font-serif: "Petrona", serif;
+  
+}
