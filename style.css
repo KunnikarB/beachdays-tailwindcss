@@ -18,5 +18,19 @@ img {
 :root {
   --font-sans: "Roboto Flex", sans-serif;
   --font-serif: "Petrona", serif;
+  --font-size: 1.125rem;
+  --font-size-md: 1.875rem;
+  --font-size-lg: 2.5rem;
+  --font-size-xl: 7.5rem;
+  --font-ingress: 1.25rem;
+
+  --color-gradient: linear-gradient(90deg236.47deg, #fffbf0 30.07%, #ffeadf 100%);
+  --color-dark: #222222;
+  --color-light: #fffbf0;
+  --color-green: #dbf7af;
+  
+  --grid-container: [full-start] minmax(0, 32px) [inner-start] minmax(0, 90rem) [inner-end] minmax(1rem, 1fr) [full-end];
+
   
 }
+
