@@ -28,9 +28,90 @@ img {
   --color-dark: #222222;
   --color-light: #fffbf0;
   --color-green: #dbf7af;
-  
-  --grid-container: [full-start] minmax(0, 32px) [inner-start] minmax(0, 90rem) [inner-end] minmax(1rem, 1fr) [full-end];
 
-  
+  --header-height: 132px;
+
+  --grid-container: [full-start] minmax(32px, 1fr) [inner-start] minmax(0, 90rem) [inner-end] minmax(32px, 1fr) [full-end];  
 }
 
+/* Typography */
+body {
+  font-size: var(--font-size);
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-serif);
+}
+
+p, li {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+
+/* Layout */
+
+
+.site-header {
+  position: absolute;
+  width: 100%;
+  display: grid;
+  grid-template-columns: var(--grid-container);
+  height: var(--header-height);
+
+  .site-header__inner {
+    grid-column: inner;
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+  }
+
+  .site-header__buttons {
+    margin-left: auto;
+  }
+}
+
+.menu {
+  .menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .menu__link {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-size: var(--font-size);
+    font-weight: 500;
+  }
+}
+
+.icon-buttons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  .icon-buttons__button {
+    padding: 0;
+    border: none;
+
+  }
+}
+
+.hero {
+  background: var(--color-gradient);
+  min-height: 100dvh;
+}
