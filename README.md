@@ -56,7 +56,7 @@ Beachdays uses a **Warm Sand Gradient** for a premium summer feel:
 --- 
 
 ## 📸 Preview
-<img width="1713" height="949" alt="beachdays" src="https://github.com/user-attachments/assets/5a87e9db-0b6c-4507-a407-8a9b88bd31ac" />
+<img width="1770" height="943" alt="beachdays" src="https://github.com/user-attachments/assets/2e657ee9-62ab-4180-8fed-5ac32220381a" />
 
 ---
 
