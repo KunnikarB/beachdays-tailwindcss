@@ -13,27 +13,35 @@ figure {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 :root {
-  --font-sans: "Roboto Flex", sans-serif;
-  --font-serif: "Petrona", serif;
+  --font-sans: 'Roboto Flex', sans-serif;
+  --font-serif: 'Petrona', serif;
   --font-size: 1.125rem;
   --font-size-md: 1.875rem;
   --font-size-lg: 2.5rem;
   --font-size-xl: 7.5rem;
   --font-ingress: 1.25rem;
 
-  --color-gradient: linear-gradient(232.89deg, rgba(255, 246, 218, 0.2) 28.46%, rgba(255, 228, 205, 0.2) 28.47%, rgba(255, 216, 196, 0.2) 99.49%), #D9D9D9;
+  --color-gradient:
+    linear-gradient(
+      232.89deg,
+      rgba(255, 246, 218, 0.2) 28.46%,
+      rgba(255, 228, 205, 0.2) 28.47%,
+      rgba(255, 216, 196, 0.2) 99.49%
+    ),
+    #d9d9d9;
   --color-dark: #222222;
-  --color-light: #D9D9D9;
+  --color-light: #d9d9d9;
   --color-green: #dbf7af;
 
   --header-height: 132px;
 
-  --grid-container: [full-start] minmax(32px, 1fr) [inner-start] minmax(0, 90rem) [inner-end] minmax(32px, 1fr) [full-end];  
+  --grid-container: [full-start] minmax(32px, 1fr) [inner-start]
+    minmax(0, 90rem) [inner-end] minmax(32px, 1fr) [full-end];
 }
-
 
 /* Typography */
 body {
@@ -43,12 +51,18 @@ body {
   background-color: var(--color-gradient);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-family: var(--font-serif);
 }
 
-p, li {
+p,
+li {
   margin: 0;
 }
 
@@ -57,9 +71,7 @@ a {
   color: var(--color-dark);
 }
 
-
 /* Layout */
-
 
 .site-header {
   position: absolute;
@@ -111,12 +123,10 @@ a {
     border: none;
     background: none;
     cursor: pointer;
-
   }
-  
 }
 
-.hero {
+ .hero {
   background: var(--color-gradient);
   min-height: 100dvh;
   display: grid;
@@ -170,45 +180,161 @@ a {
   }
 
   .hero__images {
-    max-width: 700px;
+    max-width: min(90vw, 600px);
     width: 100%;
     aspect-ratio: 1 / 1;
     position: relative;
+    margin: 0 auto;
   }
 
   .hero__image {
     position: absolute;
   }
 
-  #shorts {
-    max-width: 516px;
-    right: -60px;
-    bottom: -48px;
+  .hero__image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
-#swimsuit {
-    max-width: 650px;
-    left: -120px;
-    top: -48px;
+  #shorts {
+    width: 70%;
+    right: -10%;
+    bottom: -10%;
+  }
+
+  #swimsuit {
+    width: 95%;
+    left: -15%;
+    top: -5%;
   }
 
   #waves {
-    max-width: 384px;
-    right: 32px;
-    top: 100px;
+    width: 55%;
+    right: 5%;
+    top: 20%;
   }
 
   #circle-text {
-    max-width: 700px;
+    width: 100%;
     animation: spin 32s infinite forwards linear;
+  }
+} 
+
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 96px;
+  }
+
+  .site-header__inner {
+    gap: 2.5rem;
+  }
+
+  .menu__list {
+    gap: 1.25rem;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero__content {
+    align-items: center;
+    text-align: center;
+    margin-top: calc(var(--header-height) + 2rem);
+  }
+
+  .hero__title {
+    max-width: none;
+  }
+
+  .hero__ingress,
+  .hero__description {
+    max-width: 32rem;
   }
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  :root {
+    --font-size-md: 1.5rem;
+    --font-size-xl: 4rem;
+    --header-height: 80px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .site-header {
+    position: relative;
+  }
+
+  .menu {
+    display: none; 
+  }
+
+  .site-header__inner {
+    gap: 1.5rem;
+  }
+
+  .icon-buttons {
+    gap: 1.5rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__content {
+    margin-top: 3rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: clamp(2.75rem, 8vw, 4rem);
+    line-height: 1;
+  }
+
+  .hero__images {
+    max-width: 90vw;
+    margin-top: 2rem;
+  }
+
+  #shorts {
+    width: 65%;
+    right: -5%;
+    bottom: -5%;
+  }
+
+  #swimsuit {
+    width: 85%;
+    left: -10%;
+    top: 0;
+  }
+
+  #waves {
+    width: 50%;
+    top: 25%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__ingress {
+    font-size: 1.25rem;
+  }
+
+  .hero__description {
+    font-size: 1rem;
+  }
+
+  .hero__cta {
+    font-size: 0.95rem;
+  }
+
+  .hero__images {
+    aspect-ratio: 1 / 1.1;
   }
 }
