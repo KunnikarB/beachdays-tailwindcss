@@ -234,24 +234,41 @@ a {
     gap: 1.25rem;
   }
 
+
+  .hero .hero__ingress {
+    font-size: 1.125rem;
+  }
+
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 3rem;
+    text-align: left;
   }
 
   .hero__content {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     margin-top: calc(var(--header-height) + 2rem);
   }
 
   .hero__title {
     max-width: none;
+    text-align: left;
   }
 
   .hero__ingress,
   .hero__description {
     max-width: 32rem;
+  }
+
+  .hero__images {
+    margin: 0 auto;
+  }
+
+   #shorts {
+    width: 70%;
+    right: -10%;
+    bottom: -10%;
   }
 }
 
@@ -322,16 +339,30 @@ a {
 }
 
 @media (max-width: 480px) {
-  .hero__ingress {
-    font-size: 1.25rem;
+  .site-header__inner .branding svg {
+    width: 200px;
+    height: auto;
   }
 
-  .hero__description {
-    font-size: 1rem;
+  .site-header__buttons .icons-buttons__button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .hero .hero__title {
+    font-size: 1.5rem;
+  }
+
+  .hero .hero__ingress {
+    font-size: 0.7rem;
+  }
+
+  .hero .hero__description {
+    font-size: 0.6rem;
   }
 
   .hero__cta {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .hero__images {
