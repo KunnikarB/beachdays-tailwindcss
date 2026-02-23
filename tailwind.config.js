@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.js'],
+  content: ['./index.html', './src/**/*.{js,ts}'],
   theme: {
     extend: {
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1440px',
+        '3xl': '2560px',
+      },
       fontFamily: {
         sans: ["'Roboto Flex'", 'sans-serif'],
         serif: ["'Petrona'", 'serif'],
@@ -12,10 +20,12 @@ module.exports = {
         light: '#d9d9d9',
         green: '#dbf7af',
       },
-      backgroundImage: {
-        hero: 'linear-gradient(232.89deg, rgba(255,246,218,0.2) 28.46%, rgba(255,228,205,0.2) 28.47%, rgba(255,216,196,0.2) 99.49%)',
+      animation: {
+        'spin-slow': 'spin 32s linear infinite',
       },
     },
   },
   plugins: [],
 };
+
+npx tailwindcss -i ./src/css/styles.css -o ./output.css --watch
